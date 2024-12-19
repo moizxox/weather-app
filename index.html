@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/images/example.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body class="p-0 m-0 bg-[#111]">
+    <section class="w-full">
+      <section
+        class="mx-auto mt-[50px] w-[90%] max-w-[600px] bg-[#ffffff39] backdrop-blur-[10px] p-[30px] rounded-[20px] text-center flex flex-col gap-y-[20px]"
+      >
+        <h1
+          class="text-white uppercase text-[32px] md:text-[38px] font-bold m-0"
+        >
+          Weather App
+        </h1>
+        <div
+          class="search-weather relative border-[1px] border-[#ffffff87] rounded-[10px] py-[10px] px-[20px]"
+        >
+          <form action="" class="flex gap-x-[10px]" id="searchForm">
+            <label for=""></label>
+            <div
+              class="empty-error p-[20px] bg-red-400 text-white rounded-[10px] absolute top-[-120%] hidden uppercase"
+            >
+              <span>Please enter a City</span>
+            </div>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              placeholder="Enter the City"
+              class="w-full bg-transparent text-white outline-none"
+              autocomplete="off"
+            />
+            <button type="submit">
+              <svg
+                class="svg-icon search-icon"
+                aria-labelledby="title desc"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 19.9 19.7"
+                width="20"
+              >
+                <title id="title">Search Icon</title>
+                <desc id="desc">A magnifying glass icon.</desc>
+                <g class="search-path" fill="none" stroke="#fff">
+                  <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+                  <circle cx="8" cy="8" r="7" />
+                </g>
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="loader hidden">
+          <div class="flex flex-row gap-2 items-center justify-center">
+            <div class="w-4 h-4 rounded-full bg-white animate-bounce"></div>
+            <div
+              class="w-4 h-4 rounded-full bg-white animate-bounce [animation-delay:-.3s]"
+            ></div>
+            <div
+              class="w-4 h-4 rounded-full bg-white animate-bounce [animation-delay:-.5s]"
+            ></div>
+          </div>
+        </div>
+        <div class="results flex flex-col gap-y-[20px] hidden">
+          <!-- Temprature -->
+          <div class="temprature">
+            <h3
+              class="text-white text-[72px] md:text-[80px] font-bold leading-[normal]"
+              id="temp"
+            >
+              14°C
+            </h3>
+            <h6
+              class="text-white text-[28px] md:text-[32px] uppercase leading-[normal]"
+              id="cityName"
+            >
+              Lahore
+            </h6>
+          </div>
+          <!-- Weather type -->
+          <div
+            class="weather-type bg-[#ffffff39] py-[10px] px-[20px] rounded-[10px] flex flex-col items-center"
+          >
+            <h4
+              class="text-center font-medium uppercase text-white text-[16px]"
+            >
+              Weather Type
+            </h4>
+            <h3
+              class="text-center font-bold uppercase text-white text-[32px]"
+              id="wType"
+            >
+              Rainy
+            </h3>
+            <img src="images/example.png" alt="" / class="mt-[-20px]" id="icon">
+          </div>
+          <!-- Other Info -->
+          <div class="other-info flex gap-x-[20px] gap-y-[5px] flex-wrap">
+            <!-- Humidity -->
+            <div
+              class="w-full sm:w-[48%] bg-[#ffffff39] py-[10px] px-[20px] rounded-[10px] flex flex-col"
+            >
+              <h4
+                class="text-center font-medium uppercase text-white text-[16px]"
+              >
+                Humidity
+              </h4>
+              <img src="images/humidity-icon.png" alt="" / class=" w-[50px]
+              mx-auto">
+              <h3
+                class="text-center font-bold uppercase text-white text-[32px]"
+                id="humidityVal"
+              >
+                79%
+              </h3>
+            </div>
+            <!-- Wind -->
+            <div
+              class="w-full sm:w-[48%] bg-[#ffffff39] py-[10px] px-[20px] rounded-[10px] flex flex-col"
+            >
+              <h4
+                class="text-center font-medium uppercase text-white text-[16px]"
+              >
+                Wind
+              </h4>
+              <img src="images/wind-icon.png" alt="" / class=" w-[50px]
+              mx-auto">
+              <h3
+                class="text-center font-bold text-white text-[32px]"
+                id="wind"
+              >
+                83m/s
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+  <script src="/app.js"></script>
+</html>
